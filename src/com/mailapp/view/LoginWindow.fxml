@@ -2,13 +2,14 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="180.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mailapp.controller.LoginWindowController">
+<AnchorPane prefHeight="190.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TextField fx:id="passwordField" layoutX="91.0" layoutY="85.0" prefHeight="26.0" prefWidth="210.0" />
+      <PasswordField fx:id="passwordField" layoutX="91.0" layoutY="85.0" prefHeight="26.0" prefWidth="210.0" />
       <TextField fx:id="emailAddressField" alignment="CENTER" layoutX="91.0" layoutY="46.0" prefHeight="26.0" prefWidth="210.0" />
       <Label alignment="CENTER" layoutX="32.0" layoutY="50.0" text="E-mail" />
       <Label alignment="CENTER" layoutX="32.0" layoutY="89.0" text="Pasword" />
@@ -17,7 +18,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Button fx:id="loginButton" layoutX="149.0" layoutY="149.0" mnemonicParsing="false" onAction="#loginButonAction" text="LOGIN" />
+      <Button layoutX="149.0" layoutY="149.0" mnemonicParsing="false" onAction="#loginButtonAction" text="LOGIN" />
       <Label fx:id="errorText" alignment="CENTER" layoutX="162.0" layoutY="122.0" />
    </children>
 </AnchorPane>

@@ -1,5 +1,6 @@
 package com.mailapp;
 
+import com.mailapp.view.ViewFactory;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,15 +17,7 @@ public class Launcher extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        URL urlLoginWindow = getClass().getResource("view/MainWindow.fxml");
-        Parent parent = FXMLLoader.load(urlLoginWindow);
-
-        Scene scene = new Scene(parent, 350, 180);
-        stage.setScene(scene);
-
-        stage.show();
-
-        stage.show();
-
+        ViewFactory viewFactory = new ViewFactory(new EmailManager());
+        viewFactory.showLoginWindow();
     }
 }

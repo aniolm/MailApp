@@ -18,6 +18,11 @@ public class ViewFactory {
     public ViewFactory(EmailManager emailManager) {
         this.emailManager = emailManager;
     }
+    private boolean mainViewInitialized = false;
+
+    public boolean isMainViewInitialized(){
+        return mainViewInitialized;
+    }
 
     public void showLoginWindow(){
         BaseController controller = new LoginWindowController(emailManager, this, "LoginWindow.fxml");
@@ -27,6 +32,7 @@ public class ViewFactory {
     public void showMainWindow(){
         BaseController controller = new MainWindowController(emailManager, this, "MainWindow.fxml");
         initializeStage(controller);
+        mainViewInitialized = true;
     }
     private void initializeStage(BaseController baseController){
         URL urlWindow = getClass().getResource(baseController.getFxmlName());

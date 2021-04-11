@@ -10,4 +10,5 @@ module MailApp {
     opens com.mailapp;
     opens com.mailapp.view;
     opens com.mailapp.controller;
+    opens com.mailapp.model;
 }

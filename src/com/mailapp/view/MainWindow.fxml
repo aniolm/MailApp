@@ -36,11 +36,11 @@
       <WebView fx:id="emailWebView" layoutX="150.0" layoutY="249.0" prefHeight="152.0" prefWidth="450.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="249.0" />
       <TableView fx:id="emailTableView" layoutX="150.0" layoutY="26.0" prefHeight="222.0" prefWidth="450.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Sender" />
-          <TableColumn prefWidth="100.79998779296875" text="Subject" />
-            <TableColumn prefWidth="90.4000244140625" text="Recipient" />
-            <TableColumn prefWidth="78.39996337890625" text="Size" />
-            <TableColumn prefWidth="105.60003662109375" text="Date" />
+          <TableColumn fx:id="senderCol" prefWidth="75.0" text="Sender" />
+          <TableColumn fx:id="subjectCol" prefWidth="100.79998779296875" text="Subject" />
+            <TableColumn fx:id="recipientCol" prefWidth="90.4000244140625" text="Recipient" />
+            <TableColumn fx:id="sizeCol" prefWidth="78.39996337890625" text="Size" />
+            <TableColumn fx:id="dateCol" prefWidth="105.60003662109375" text="Date" />
         </columns>
       </TableView>
    </children>

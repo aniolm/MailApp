@@ -27,22 +27,31 @@ public class EmailTreeItem<String> extends TreeItem {
     }
 
     public void addEmail(Message message) throws MessagingException {
-        boolean messageIsRead = message.getFlags().contains(Flags.Flag.SEEN);
-            EmailMessage emailMessage = new EmailMessage(
-                    message.getSubject(),
-                    message.getFrom()[0].toString(),
-                    message.getRecipients(MimeMessage.RecipientType.TO)[0].toString(),
-                    message.getSize(),
-                    message.getSentDate(),
-                    messageIsRead,
-                    message
-            );
-            emailMessages.add(emailMessage);
-            if(!messageIsRead){
-                incrementUnreadMessageCount();
-            }
-
+        EmailMessage emailMessage = fetchMessage(message);
+        emailMessages.add(emailMessage);
     }
+    public void addEmailToTop(Message message) throws MessagingException {
+        EmailMessage emailMessage = fetchMessage(message);
+        emailMessages.add(0, emailMessage);
+    }
+
+    private EmailMessage fetchMessage(Message message) throws MessagingException {
+        boolean messageIsRead = message.getFlags().contains(Flags.Flag.SEEN);
+        EmailMessage emailMessage = new EmailMessage(
+                message.getSubject(),
+                message.getFrom()[0].toString(),
+                message.getRecipients(MimeMessage.RecipientType.TO)[0].toString(),
+                message.getSize(),
+                message.getSentDate(),
+                messageIsRead,
+                message
+        );
+        if(!messageIsRead){
+            incrementUnreadMessageCount();
+        }
+        return emailMessage;
+    }
+
     public void incrementUnreadMessageCount(){
         unreadMessagesCount ++;
         updateName();
@@ -56,4 +65,6 @@ public class EmailTreeItem<String> extends TreeItem {
             this.setValue(name);
         }
     }
+
+
 }

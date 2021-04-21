@@ -2,6 +2,7 @@ package com.mailapp.view;
 
 import com.mailapp.EmailManager;
 import com.mailapp.controller.BaseController;
+import com.mailapp.controller.EmailComposeController;
 import com.mailapp.controller.LoginWindowController;
 import com.mailapp.controller.MainWindowController;
 import javafx.fxml.FXMLLoader;
@@ -34,6 +35,12 @@ public class ViewFactory {
         initializeStage(controller);
         mainViewInitialized = true;
     }
+
+    public void showEmailComposeWindow(){
+        BaseController controller = new EmailComposeController(emailManager, this, "EmailComposeWindow.fxml");
+        initializeStage(controller);
+    }
+
     private void initializeStage(BaseController baseController){
         URL urlWindow = getClass().getResource(baseController.getFxmlName());
         FXMLLoader fxmlLoader = new FXMLLoader(urlWindow);

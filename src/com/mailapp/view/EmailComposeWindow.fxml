@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.web.HTMLEditor?>
 
-<AnchorPane prefHeight="453.0" prefWidth="602.0" xmlns="http://javafx.com/javafx/11.02" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="453.0" prefWidth="602.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="16.0" layoutY="38.0" text="Recipient" />
       <Label layoutX="14.0" layoutY="69.0" text="Subject" />
@@ -18,5 +18,6 @@
       <Label fx:id="errorTextField" layoutX="14.0" layoutY="416.0" prefHeight="18.0" prefWidth="217.0" />
       <Label layoutX="16.0" layoutY="9.0" text="Account" />
       <ChoiceBox fx:id="emailAccountChoice" layoutX="81.0" layoutY="4.0" prefHeight="26.0" prefWidth="502.0" />
+      <Button layoutX="479.0" layoutY="101.0" mnemonicParsing="false" onAction="#addAttachmentAction" prefHeight="18.0" prefWidth="114.0" text="Attachments" />
    </children>
 </AnchorPane>

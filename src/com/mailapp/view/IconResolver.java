@@ -19,7 +19,7 @@ public class IconResolver {
             } else if (lowerCaseFolderName.contains("sent")){
                 imageView = new ImageView(new Image(getClass().getResourceAsStream("icons/sent2.png")));
             } else if (lowerCaseFolderName.contains("spam")) {
-                imageView = new ImageView(new Image(getClass().getResourceAsStream("icons/inbox.png")));
+                imageView = new ImageView(new Image(getClass().getResourceAsStream("icons/spam.png")));
             } else {
                 imageView = new ImageView(new Image(getClass().getResourceAsStream("icons/folder.png")));
             }
@@ -27,6 +27,8 @@ public class IconResolver {
             e.printStackTrace();
             return null;
         }
+        imageView.setFitWidth(16);
+        imageView.setFitHeight(16);
         return imageView;
     }
 }
